@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h2>Wallet balance:</h2>
+        <p>{{ balance }} ETH</p>
+
+        <h2>Recent transactions:</h2>
+        <ul>
+        {% for tx in transactions %}
+            {{ tx }} ETH
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block css %}
+    <style>
+        body {
+            background-color: #aeaeae;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin: 50px auto;
+            width: 550px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center; /* Center-align the text */
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            text-align: left; /* Reset text alignment for the list items */
+            text-align: center; /* Center-align the text */
+
+        }
+
+
+        li {
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #666;
+            text-align: center; /* Center-align the text */
+
+        }
+        h2,
+        li,ul {
+            font-size: 28px;
+        }
+        p {
+            font-size: 25px;
+        }
+    </style>
+{% endblock %}
